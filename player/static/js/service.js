@@ -92,39 +92,34 @@ playerApp.factory('Player', ['$rootScope', '$interval' ,'Audio', 'DataList', 'Da
 	var player = {
 		musicLen: '7',
 		controllPlay: function(index) {
-			//audio的url
+			player.playerSrc(index);
+			player.play();//播放
+			player.isPlay = true;//让图片转动
+			DataBinding.dataBindFunc(index);//显示当前播放歌曲的信息
+			player.playing = true;//显示暂停按钮
+		},
+		playerSrc: function(index) { //Audio的url
 			var url = $rootScope.data[index].songUrl;
 			Audio.src = url;
-			Audio.play();
-
-			//让图片转动
-			player.isPlay = true;
-
-			//显示当前播放歌曲的信息
-			DataBinding.dataBindFunc(index);
-
-			//显示暂停按钮
-			player.playing = true;
 		},
 		play: function(index) { //播放
 			if(player.playing) {
 				player.stop();
 			}
 
-			player.controllPlay(index);
+			Audio.play(); //h5 audio api
+			player.isPlay = true; //图片转动
+			player.playing = true; //显示暂停按钮
 		},
 		stop: function() { //暂停
 			if(player.playing) {
 				Audio.pause();
 			}
 
-			//图片停止转动
-			player.isPlay = false;
-
-			//显示播放按钮
-			player.playing = false;
+			player.isPlay = false; //图片停止转动
+			player.playing = false;//显示播放按钮
 		},
-		prev: function() { //上一首歌
+		prev: function(index) { //上一首歌
 			console.log('prev:' + player.active);
 
 			if(player.active == 0) { //如果是第一首音乐
@@ -144,11 +139,11 @@ playerApp.factory('Player', ['$rootScope', '$interval' ,'Audio', 'DataList', 'Da
 				player.active += 1;
 			}
 
-			player.controllPlay(player.active);
+			player.controllPlay(player.active); //播放显示的数据
 		},
-		surplusBar: function() {
+		surplusBar: function() { //音乐剩余时间
 			if(!isNaN(Audio.duration)) {
-				//音乐剩余时间
+				
 				var surplus = Audio.duration-Audio.currentTime;
 				var surplusMin = parseInt(surplus/60);
 				var surplusSecond = parseInt(surplus%60);
@@ -163,7 +158,7 @@ playerApp.factory('Player', ['$rootScope', '$interval' ,'Audio', 'DataList', 'Da
 				player.surplusWidth = 'width:' + parseInt(progressValue) + 'px';
 			}
 		},
-		bufferBar: function() {
+		bufferBar: function() { //缓冲进度条
 			bufferTimer = $interval(function() {
 				var bufferIndex = Audio.buffered.length;
 

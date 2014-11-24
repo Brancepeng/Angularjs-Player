@@ -164,10 +164,11 @@ b {
   color: #29295f;
 }
 .container {
-  position: relative;
-  top: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 1000px;
-  margin: 0 auto;
 }
 .main {
   *zoom: 1;
