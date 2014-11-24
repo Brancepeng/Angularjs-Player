@@ -140,51 +140,8 @@ playerApp.factory('Player', ['$rootScope', '$interval' ,'Audio', 'DataList', 'Da
 			}
 
 			player.controllPlay(player.active); //播放显示的数据
-		},
-		surplusBar: function() { //音乐剩余时间
-			if(!isNaN(Audio.duration)) {
-				
-				var surplus = Audio.duration-Audio.currentTime;
-				var surplusMin = parseInt(surplus/60);
-				var surplusSecond = parseInt(surplus%60);
-				if(surplusSecond < 10 ) {
-					surplusSecond = '0'+surplusSecond;
-				}
-
-				player.playTime = '-' + surplusMin + ':' + surplusSecond;
-
-				//播放进度条
-				var progressValue = Audio.currentTime/Audio.duration*1000;
-				player.surplusWidth = 'width:' + parseInt(progressValue) + 'px';
-			}
-		},
-		bufferBar: function() { //缓冲进度条
-			bufferTimer = $interval(function() {
-				var bufferIndex = Audio.buffered.length;
-
-				if (bufferIndex > 0 && Audio.buffered != undefined) {
-					var bufferValue = Audio.buffered.end(bufferIndex-1)/Audio.duration*1000;
-					player.bufferWidth = 'width:' + parseInt(bufferValue) + 'px';
-
-					if (Math.abs(Audio.duration - Audio.buffered.end(bufferIndex-1)) <1) {
-						player.bufferWidth = 'width: 1000px';
-						clearInterval(bufferTimer);
-					}
-				}
-			}, 1000);
 		}
-
 	};
-
-	//播放时间
-	Audio.addEventListener('timeupdate',function(){
-		$rootScope.$apply(player.surplusBar());
-	});
-
-	//缓冲时间
-	Audio.addEventListener('canplay', function() {
-		$rootScope.$apply(player.bufferBar());
-	});
 
 	return player;
 }]);
