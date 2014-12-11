@@ -12,7 +12,7 @@
 		<div class="main">
 			<div class="player">
 				<nav class="artist">
-					<p class="artist-img" ng-init="player.isPlay=false" ng-class="{true: 'artist-rotate', false: ''}[player.isPlay]"><img src="{{avatar}}" alt=""></p>
+					<p class="artist-img" ng-init="player.isPlay=false" ng-class="{true: 'artist-rotate', false: ''}[player.isPlay]"><img ng-src="{{avatar}}" alt=""></p>
 					<p class="artist-name"><b class="icon-music"></b>{{artist}}</p>
 				</nav>
 
@@ -22,10 +22,10 @@
 				</section>
 
 				<div class="player-btn" ng-init="player.playing=false">
-					<a href="#" class="prev icon" ng-click="player.prev()"><span class="icon-backward"></span></a>
-					<a href="#" class="play" ng-show="!player.playing" ng-click="player.play()"><span class="icon-play"></span></a>
-					<a href="#" class="stop" ng-show="player.playing" ng-click="player.stop()"><span class="icon-pause"></span></a>
-					<a href="#" class="next" ng-click="player.next()"><span class="icon-forward"></span></a>
+					<a ng-href="#" class="prev icon" ng-click="player.prev()"><span class="icon-backward"></span></a>
+					<a ng-href="#" class="play" ng-show="!player.playing" ng-click="player.play()"><span class="icon-play"></span></a>
+					<a ng-href="#" class="stop" ng-show="player.playing" ng-click="player.stop()"><span class="icon-pause"></span></a>
+					<a ng-href="#" class="next" ng-click="player.next()"><span class="icon-forward"></span></a>
 				</div>
 			</div>
 
