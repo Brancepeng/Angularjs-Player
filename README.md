@@ -1,4 +1,4 @@
-#Angularjs-Player
+﻿#Angularjs-Player
 
 ####用angularjs做的h5和c3的音乐播放器
 
@@ -15,4 +15,4 @@
 ![demo.jpg](demo.jpg)
 
 #####弱弱的附上一个链接：[请戳这里](http://www.uselessblog.cn/JQM-me/player/)
-
+ 
