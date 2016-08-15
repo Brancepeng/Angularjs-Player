@@ -9,7 +9,9 @@ playerApp.directive('musicMode', ['$timeout', '$document', function($timeout, $d
 		},
 		templateUrl: 'tpls/mode.html',
 		link: function(scope, ele, attr) {
-
+			console.log(scope);
+			console.log(ele);
+			console.log(attr);
 			var status = 'list'; //标识播放模式，默认为list
 
 			scope.addActive = function(index) { //选中style

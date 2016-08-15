@@ -1,0 +1,49 @@
+
+html ,body{  width: 100%;min-width: 1000px;}
+a{ text-decoration: none;}
+ul{ list-style-type: none;}
+body ,html {
+    background: -webkit-linear-gradient(180deg, #e59bb4 50%, #7e859f);
+    background: linear-gradient(180deg,  #e59bb4 50%, #7e859f);
+    background: -o-linear-gradient(180deg, #e59bb4 50%, #7e859f);
+    background: -moz-linear-gradient(180deg, #e59bb4 50%, #7e859f);
+}
+a ,a:hover{  text-decoration: none;}
+a:hover{ transition: color 0.2s;}
+.fl_l{ float: left;}
+.fl_r{ float: right}
+.content_block{ width: 90%; height:82%;padding-top: 50px; margin: 0 auto;}
+.pross_tip{width: 90%; display: block; margin: 0 auto}
+.cont_left { width: 50%; float: left; }
+.cont_right{ width: 50%; margin-top: 20px; float: left; background:rgba(255, 255,255,0.2); border-radius: 20px; overflow: hidden ;
+    }
+.cont_right ul {  height: 70%; color: #fff; float: left;  overflow: hidden; margin-bottom: 30px; margin-top: 30px; }
+.cont_right ul li{line-height: 30px; font-size: 1em;}
+.pos_re{ position: relative;}
+.alert_tip{width: 150px; height: 30px; line-height: 30px; border-radius: 15px; float: right;position: absolute; top:80px; right:-10px; text-align: center ; color: #fff}
+.cont_left{ padding-top: 40px; position: relative;}
+.video_block i{ width: 110px; height: 110px; border-radius: 50%; box-shadow:2px 2px 5px #333; float: left;background-color: #fff;  position: absolute; z-index: 4; top:10px}
+.video_block .video_show{ width: 240px; border-radius: 25px;  height: 50px;
+    line-height: 50px;
+    color: #ffffff;
+    font-size: 1.5em;
+    float: left;
+    padding-left: 120px;
+    box-shadow:2px 2px 5px #333;
+}
+.video_show small{ margin: 0 3px;}
+.page_bj{
+    background: -webkit-linear-gradient(180deg, #73d4d4 50%, #47b2a5);
+    background: linear-gradient(180deg, #73d4d4 50%, #47b2a5);
+    background: -o-linear-gradient(180deg,#73d4d4 50%, #47b2a5);
+    background: -moz-linear-gradient(180deg,#73d4d4 50%, #47b2a5);
+}
+.video_zi{ width: 100%;  height:auto; color: #fff; float: left; margin-top: 18%; text-align: center}
+.video_button{ width: 100%; float: left; padding-top: 60px; text-align: center;display: flex;align-items: center;justify-content: center; font-size: 2em;}
+.button_prve ,.button_next{  width: 85px;
+    height:85px; color: #fff;border-radius: 50px; float: left; margin:10px 0;line-height: 85px; }
+.button_stop{  width:105px;
+    height:105px; color: #fff; border-radius: 50px; float: left; margin: 0 20px; line-height:105px;}
+.porss_video{ width: 100%; display: block;float: left; margin: 0px  0 0px 0;}
+.porss_video  a{ float: right; font-size: 1.5em; margin: 10px; color: #4f4c79;}
+.porss_video  a:hover{ float: right; font-size: 1.5em; margin: 10px; color: #52ece3;}

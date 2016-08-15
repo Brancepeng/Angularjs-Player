@@ -6,6 +6,8 @@ playerApp.controller('playerCtrls', ['$scope', 'DataList', 'DataBinding', 'Audio
 	//本应用重点部分：控制播放器
 	$scope.player = Player;
 	$scope.audio = Audio;
+	console.log($scope.player);
+	console.log($scope.audio);
 	$scope.player.active = 0;
 
 	$scope.player.controllPlay($scope.player.active);

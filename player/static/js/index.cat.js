@@ -1,3 +1,4 @@
+/*
 var playerApp = angular.module('playerApp', ['ngRoute']);
 //player Controller
 playerApp.controller('playerCtrls', ['$scope', 'DataList', 'DataBinding', 'Audio', 'Player', '$timeout', function($scope, DataList, DataBinding, Audio, Player, $timeout) {
@@ -344,4 +345,4 @@ playerApp.config(function($routeProvider) {
 	}).otherwise({
 		redirectTo: '/player'
 	});
-});
+});*/
